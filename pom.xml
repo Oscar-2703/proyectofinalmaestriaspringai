@@ -35,17 +35,21 @@
 			<artifactId>spring-boot-starter-webflux</artifactId>
 		</dependency>
 
-		<!-- Spring AI Ollama -->
 		<dependency>
 			<groupId>org.springframework.ai</groupId>
-			<artifactId>spring-ai-starter-model-ollama</artifactId>
+			<artifactId>spring-ai-starter-model-vertex-ai-gemini</artifactId>
 			<version>1.1.4</version>
 		</dependency>
 
-		<!-- Chroma Vector Store -->
 		<dependency>
 			<groupId>org.springframework.ai</groupId>
-			<artifactId>spring-ai-starter-vector-store-chroma</artifactId>
+			<artifactId>spring-ai-starter-model-vertex-ai-embedding</artifactId>
+			<version>1.1.4</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.ai</groupId>
+			<artifactId>spring-ai-starter-vector-store-mongodb-atlas</artifactId>
 			<version>1.1.4</version>
 		</dependency>
 

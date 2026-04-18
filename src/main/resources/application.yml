@@ -1,31 +1,25 @@
 spring:
-  profiles:
-    active: query
-
   application:
     name: demo
+  profiles:
+    active: default
 
   ai:
-    ollama:
-      base-url: http://localhost:11434
-
-      chat:
-        options:
-          model: llama3.1
-          temperature: 0
-
-      embedding:
-        options:
-          model: nomic-embed-text
-
-    model:
-      embedding: ollama
-
+    vertex:
+      ai:
+        gemini:
+          project-id: proyectofinalmaestria-493719
+          location: us-central1
+          chat.options.model: gemini-2.5-flash
+        embedding:
+          project-id: proyectofinalmaestria-493719
+          location: us-central1
     vectorstore:
-      chroma:
-        client:
-          host: http://localhost
-          port: 8000
-
-        collection-name: hs-codes
+      mongodb:
         initialize-schema: true
+        collection-name: hscodes
+
+  data:
+    mongodb:
+      uri: ${MONGODB_URI}
+      database: proyectomaestria

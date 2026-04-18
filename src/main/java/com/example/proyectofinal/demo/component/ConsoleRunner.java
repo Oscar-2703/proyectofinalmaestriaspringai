@@ -46,7 +46,7 @@ class QueryRunner implements CommandLineRunner {
 
             if ("exit".equalsIgnoreCase(query)) break;
 
-            String result = queryService.processQuery(query);
+            String result = queryService.processQuery(query).blockFirst();
             System.out.println("Result: " + result);
         }
     }

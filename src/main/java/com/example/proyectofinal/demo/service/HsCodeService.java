@@ -22,6 +22,8 @@ import org.springframework.stereotype.Service;
 
 import com.opencsv.CSVReader;
 
+import reactor.core.publisher.Flux;
+
 @Service
 public class HsCodeService {
 
@@ -71,7 +73,7 @@ public class HsCodeService {
     System.out.println("Indexed documents: " + documents.size());
 }
 
-    public String processQuery(String query) {
+    public Flux<String> processQuery(String query) {
 
         // same logic as before
         String processed = chatClient.prompt()
@@ -108,7 +110,7 @@ public class HsCodeService {
                     .param("context", context)
                     .param("q", processed)
                 )
-                .call()
+                .stream()
                 .content();
     }
 }
